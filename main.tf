@@ -57,7 +57,6 @@ module "resource_groups" {
 
 
 
-
 module "networking" {
   depends_on = [module.network_watchers]
   source     = "./modules/networking/virtual_network"
@@ -95,7 +94,6 @@ module "networking" {
   #     azurerm_firewall = try(var.remote_objects.azurerm_firewall, null) #assumed from remote lz only
   #   }
 }
-
 
 resource "azurecaf_name" "peering" {
 
@@ -137,6 +135,31 @@ resource "azurerm_virtual_network_peering" "peering2" {
   allow_gateway_transit        = var.networking.vnet_peerings.allow_gateway_transit
   use_remote_gateways          = var.networking.vnet_peerings.use_remote_gateways
 }
+
+
+module "private_dns" {
+  source = "./modules/networking/private-dns"
+  #for_each            = module.networking
+  name                = "maftest.com"
+  client_config       = data.azurerm_client_config.current.id
+  global_settings     = var.global_settings
+  resource_group_name = module.resource_groups.name
+  records             = {}
+  vnet_links = {
+    "link1" = {
+      "name"                 = "test"
+      "vnet_id"              = module.networking[keys(var.networking.vnets)[0]].id
+      "registration_enabled" = true
+
+    }
+
+  }
+  #vnets     = module.networking
+  base_tags = {}
+  tags      = {}
+
+}
+
 module "network_watchers" {
   source              = "./modules/networking/network_watcher"
   resource_group_name = module.resource_groups.name
