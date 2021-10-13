@@ -4,11 +4,11 @@ variable "resource_group_name" {
   type        = string
 }
 
-variable "name"{
+variable "name" {
   description = "specifies name for resource"
-  type = string
+  type        = string
 }
-variable "address_space"{
+variable "address_space" {
   description = "specifies vnet address_space"
 
 }

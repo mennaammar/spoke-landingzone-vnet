@@ -1,4 +1,4 @@
-resource azurerm_policy_set_definition set {
+resource "azurerm_policy_set_definition" "set" {
   name         = var.initiative_name
   display_name = var.initiative_display_name
   description  = var.initiative_description

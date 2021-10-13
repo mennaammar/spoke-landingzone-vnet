@@ -8,7 +8,7 @@ variable "location" {
 }
 variable "name" {
   default = "name of the resource"
-  type        = string
+  type    = string
 }
 variable "tags" {
   description = "(Required) Map of tags to be applied to the resource"

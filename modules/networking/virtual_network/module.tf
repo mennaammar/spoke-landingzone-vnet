@@ -12,7 +12,7 @@
 
 resource "azurerm_virtual_network" "vnet" {
   #name                = azurecaf_name.caf_name_vnet.result
-  name =var.name
+  name                = var.name
   location            = var.location
   resource_group_name = var.resource_group_name
   address_space       = var.address_space
@@ -83,7 +83,7 @@ resource "azurerm_subnet_route_table_association" "rt" {
     if try(subnet.route_table_key, null) != null
   }
 
-  subnet_id      = coalesce(lookup(module.subnets, each.key, null), lookup(module.special_subnets, each.key, null)).id
+  subnet_id = coalesce(lookup(module.subnets, each.key, null), lookup(module.special_subnets, each.key, null)).id
 
   route_table_id = var.route_tables.id
 }

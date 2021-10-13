@@ -218,3 +218,27 @@ module "routes" {
 
 }
 
+# module "service_center" {
+#   source                       = "./modules/security_center"
+#   resource_group_name          = module.resource_groups.name
+#   log_analytics_workspace_name = module.log_analytics.name
+
+#   # Enable Security Center API Setting
+#    enable_security_center_setting = true
+#    security_center_setting_name   = "MCAS"
+
+#   # Enable auto provision of log analytics agents on VM's if they doesn't exist. 
+#   enable_security_center_auto_provisioning = "On"
+
+#   # Subscription Security Center contacts
+#   # One or more email addresses seperated by commas not supported by Azure proivider currently
+#   security_center_contacts = {
+#     email               = "mennatallah.abdallah-e@maf.ae"   # must be a valid email address
+#     phone               = "313312312313" # Optional
+#     alert_notifications = true
+#     alerts_to_admins    = true
+#   }
+
+
+
+# }

@@ -1,4 +1,4 @@
-resource azurerm_policy_definition def {
+resource "azurerm_policy_definition" "def" {
   name         = var.policy_name
   display_name = var.display_name
   description  = var.policy_description
