@@ -1,0 +1,108 @@
+{
+    "if": {
+        "allOf": [
+           
+            {
+                
+                "field": "[concat('tags[', parameters('Environment'), ']')]",
+                "exists": "false"
+            },
+            {
+                
+                "field": "[concat('tags[', parameters('Project'), ']')]",
+                "exists": "false"
+            },
+            {
+                
+                "field": "[concat('tags[', parameters('Owner'), ']')]",
+                "exists": "false"
+            },
+            { 
+                
+                "field": "[concat('tags[', parameters('BusinessUnit'), ']')]",
+                "exists": "false"
+            },
+            {
+                
+                "field": "[concat('tags[', parameters('OpCo'), ']')]",
+                "exists": "false"
+            },
+            {
+                
+                "field": "[concat('tags[', parameters('Confidentiality'), ']')]",
+                "exists": "false"
+            },
+            {
+                
+                "field": "[concat('tags[', parameters('ServiceLevel'), ']')]",
+                "exists": "false"
+            },
+            {
+                
+                "field": "[concat('tags[', parameters('SecurityOwner'), ']')]",
+                "exists": "false"
+            },
+            {
+                
+                "field": "[concat('tags[', parameters('TechnicalOwner'), ']')]",
+                "exists": "false"
+            }
+        ]
+    },
+    "then": {
+        "effect": "modify",
+        "details": {
+           "roleDefinitionIds": [
+              "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+           ],
+           "operations": [
+              {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('Environment'), ']')]",
+                "value": "[parameters('Environment')]"
+            },
+            {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('Project'), ']')]",
+                "value": "[parameters('Project')]"
+            },
+            {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('Owner'), ']')]",
+                "value": "[parameters('Owner')]"
+            },
+            {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('BusinessUnit'), ']')]",
+                "value": "[parameters('BusinessUnit')]"
+            },
+            {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('OpCo'), ']')]",
+                "value": "[parameters('OpCo')]"
+            },
+            {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('Confidentiality'), ']')]",
+                "value": "[parameters('Confidentiality')]"
+            },
+            {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('ServiceLevel'), ']')]",
+                "value": "[parameters('ServiceLevel')]"
+            },
+            {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('SecurityOwner'), ']')]",
+                "value": "[parameters('SecurityOwner')]"
+            },
+            {
+                "operation": "add",
+                "field": "[concat('tags[', parameters('TechnicalOwner'), ']')]",
+                "value": "[parameters('TechnicalOwner')]"
+            }
+        ]
+    }
+    }
+}
+        

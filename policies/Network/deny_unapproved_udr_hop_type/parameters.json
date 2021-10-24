@@ -6,23 +6,9 @@
             "description": "A permitted hop type for a UDR"
         }
     },
-    "allowedHopType2": {
-        "type": "String",
-        "metadata": {
-            "displayName": "Allowed hop type",
-            "description": "A permitted hop type for a UDR"
-        }
-    },
-    "allowedHopType3": {
-        "type": "String",
-        "metadata": {
-            "displayName": "Allowed hop type",
-            "description": "A permitted hop type for a UDR"
-        }
-    },
     "effect": {
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
             "Audit",
             "Deny",

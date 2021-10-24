@@ -1,0 +1,72 @@
+{
+    "Environment":{
+       "type":"String",
+       "metadata":{
+          "displayName":"Environment",
+          "description":"Value of the tag Environment"
+       },
+       "allowedValues":["prod", "test", "dev", "staging", "uat", "sandbox"]
+
+    },
+    "Project":{
+       "type":"String",
+       "metadata":{
+          "displayName":"Project",
+          "description":"Value of the tag Project"
+       }
+
+    },
+    "Owner":{
+       "type":"String",
+       "metadata":{
+          "displayName":"Owner",
+          "description":"Name of the tag, such as 'project'"
+       }
+    },
+    "BusinessUnit":{
+       "type":"String",
+       "metadata":{
+          "displayName":"BusinessUnit",
+          "description":"Value of the tag BusinessUnit"
+       },
+       "allowedValues":["SHARE", "COBU", "CORP", "ESBU", "MAFH", "IOBU", "PMBU", "SMBU", "AA", "HBU"]
+    },
+    "OpCo":{
+       "type":"String",
+       "metadata":{
+          "displayName":"OpCo",
+          "description":"Value of the tag OpCo"
+       },
+       "allowedValues":["gs", "lec", "prop", "hold"]
+    },
+    "Confidentiality":{
+       "type":"String",
+       "metadata":{
+          "displayName":"Confidentiality",
+          "description":"Value of the tag Confidentiality"
+       },
+       "allowedValues": ["C1", "C2", "C3", "C4", "Secret"]
+    },
+    "ServiceLevel":{
+       "type":"String",
+       "metadata":{
+          "displayName":"ServiceLevel",
+          "description":"Name of the tag, such as 'ServiceLevel'"
+       },
+       "allowedValues":["Basic", "Standard", "Premium", "Critical"]
+    },
+    "SecurityOwner":{
+       "type":"String",
+       "metadata":{
+          "displayName":"SecurityOwner",
+          "description":"Value of the tag SecurityOwner"
+       }
+    },
+    "TechnicalOwner":{
+       "type":"String",
+       "metadata":{
+          "displayName":"TechnicalOwner",
+          "description":"Value of the tag TechnicalOwner"
+       }
+    }
+ }

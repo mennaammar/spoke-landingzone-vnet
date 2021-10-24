@@ -1,0 +1,29 @@
+  {
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Network/virtualNetworks/subnets"
+        },
+        {
+          "field": "name",
+          "notEquals": "AzureFirewallSubnet"
+        },
+        {
+          "field": "name",
+          "notEquals": "AzureFirewallManagementSubnet"
+        },
+        {
+          "field": "name",
+          "notEquals": "GatewaySubnet"
+        },
+        {
+          "field": "Microsoft.Network/virtualNetworks/subnets/networkSecurityGroup.id",
+          "exists": "false"
+        }
+      ]
+    },
+    "then": {
+      "effect": "Deny"
+    }
+  }

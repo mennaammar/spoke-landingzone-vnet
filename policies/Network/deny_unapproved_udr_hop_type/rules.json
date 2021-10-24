@@ -16,14 +16,6 @@
                             {
                                 "field": "Microsoft.Network/routeTables/routes[*].nextHopType",
                                 "notEquals": "[parameters('allowedHopType1')]"
-                            },
-                            {
-                                "field": "Microsoft.Network/routeTables/routes[*].nextHopType",
-                                "notEquals": "[parameters('allowedHopType2')]"
-                            },
-                            {
-                                "field": "Microsoft.Network/routeTables/routes[*].nextHopType",
-                                "notEquals": "[parameters('allowedHopType3')]"
                             }
                         ]
                     },
@@ -36,14 +28,6 @@
                             {
                                 "field": "Microsoft.Network/routeTables/routes/nextHopType",
                                 "notEquals": "[parameters('allowedHopType1')]"
-                            },
-                            {
-                                "field": "Microsoft.Network/routeTables/routes/nextHopType",
-                                "notEquals": "[parameters('allowedHopType2')]"
-                            },
-                            {
-                                "field": "Microsoft.Network/routeTables/routes/nextHopType",
-                                "notEquals": "[parameters('allowedHopType3')]"
                             }
                         ]
                     }

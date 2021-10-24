@@ -1,7 +1,9 @@
-variable "management_group_name" {
-  type        = string
-  description = "The management group scope at which the policy will be defined. Changing this forces a new resource to be created."
-}
+
+/** Santhosh*/
+# variable "management_group_name" {
+#   type        = string
+#   description = "The management group scope at which the policy will be defined. Changing this forces a new resource to be created."
+# }
 
 variable "policy_name" {
   type        = string

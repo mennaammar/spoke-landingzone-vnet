@@ -1,6 +1,7 @@
 variable "global_settings" {
   description = "Global settings object for the current deployment."
   default = {
+
     passthrough    = false
     random_length  = 4
     prefixes       = ["MAF"]
@@ -13,6 +14,26 @@ variable "global_settings" {
 
   }
 }
+
+### skip this for now related to tagging policy
+variable "policy_rg_tags" {
+  default = {
+    "Environment"     = "poc"
+    "Description"     = "this is a poc environment"
+    "Project"         = "proc-project"
+    "Owner"           = "infra-team"
+    "BusinessUnit"    = "IT"
+    "OpCo"            = "prop"
+    "Confidentiality" = "C4"
+    "ServiceLevel"    = "Basic"
+    "SecurityOwner"   = "santhosh.palanivel@maf.ae"
+    "TechnicalOwner"  = "suraj.rajan@maf.ae"
+
+  }
+
+
+}
+
 variable "resource_group_location" {
   default = "uaenorth"
 

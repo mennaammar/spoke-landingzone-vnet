@@ -21,7 +21,7 @@ resource "azurerm_network_security_group" "nsg_obj" {
   name                = azurecaf_name.nsg_obj[each.key].result
   resource_group_name = var.resource_group
   location            = var.location
-  tags                = local.tags
+  # tags                = local.tags
 
   dynamic "security_rule" {
     for_each = try(var.network_security_group_definition[each.value.nsg_key].nsg, [])

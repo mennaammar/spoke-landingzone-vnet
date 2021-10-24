@@ -1,8 +1,9 @@
-variable "management_group_name" {
-  type        = string
-  description = "The scope at which the initiative will be defined. Currently this must be the group_id of a management group. Changing this forces a new resource to be created"
-  default     = null
-}
+/** Santhosh*/
+# variable "management_group_name" {
+#   type        = string
+#   description = "The scope at which the initiative will be defined. Currently this must be the group_id of a management group. Changing this forces a new resource to be created"
+#   default     = null
+# }
 
 variable "initiative_name" {
   type        = string

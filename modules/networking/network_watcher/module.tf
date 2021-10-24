@@ -13,5 +13,5 @@ resource "azurerm_network_watcher" "netwatcher" {
   name                = azurecaf_name.netwatcher.result
   location            = var.location
   resource_group_name = var.resource_group_name
-  tags                = local.tags
+  # tags                = local.tags
 }

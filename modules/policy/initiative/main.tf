@@ -3,8 +3,8 @@ resource "azurerm_policy_set_definition" "set" {
   display_name = var.initiative_display_name
   description  = var.initiative_description
   policy_type  = "Custom"
-
-  management_group_name = var.management_group_name
+  /** Santhosh*/
+  #management_group_name = var.management_group_name
 
   metadata   = local.metadata
   parameters = local.all_parameters

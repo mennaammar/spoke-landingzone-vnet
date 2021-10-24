@@ -1,5 +1,0 @@
-# Compute (IaaS) Policies
-
-## Description
-
-

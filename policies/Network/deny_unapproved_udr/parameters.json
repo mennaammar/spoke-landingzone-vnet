@@ -8,7 +8,7 @@
     },
     "effect": {
         "type": "String",
-        "defaultValue": "Audit",
+        "defaultValue": "Deny",
         "allowedValues": [
             "Audit",
             "Deny",

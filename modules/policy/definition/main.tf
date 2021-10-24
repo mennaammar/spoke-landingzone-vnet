@@ -4,8 +4,8 @@ resource "azurerm_policy_definition" "def" {
   description  = var.policy_description
   policy_type  = "Custom"
   mode         = var.policy_mode
-
-  management_group_name = var.management_group_name
+  /**Santhosh*/
+  # management_group_name = var.management_group_name
 
   policy_rule = local.policy_rule
   parameters  = local.parameters
