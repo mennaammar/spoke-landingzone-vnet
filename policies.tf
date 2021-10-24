@@ -2,7 +2,7 @@ data "azurerm_policy_definition" "Deny-PublicIP" {
   display_name = "Network interfaces should not have public IPs"
 }
 module "Deny-PublicIP" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "Deny-PublicIP"
   assignment_description  = "Prevent Public IP based services"
   definition              = data.azurerm_policy_definition.Deny-PublicIP
@@ -20,7 +20,7 @@ module "deny_unapproved_udr" {
   # management_group_name = "Tenant Root Group"
 }
 module "deny_unapproved_udr_assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "deny_unapproved_udr"
   assignment_description  = "deny_unapproved_udr"
   definition              = module.deny_unapproved_udr.definition
@@ -41,7 +41,7 @@ module "deny_unapproved_udr_hop_type" {
 }
 
 module "deny_unapproved_udr_hop_type_assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "deny_unapproved_udr_hop_type"
   assignment_description  = "deny_unapproved_udr_hop_type"
   definition              = module.deny_unapproved_udr_hop_type.definition
@@ -57,7 +57,7 @@ data "azurerm_policy_definition" "Deny_unapproved_locations" {
 
 ## Can be assigned at subscription level.
 module "Deny_unapproved_locations" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_subscription_assignment"
   assignment_display_name = "Deny_unapproved_locations"
   assignment_description  = "Allowed locations"
   definition              = data.azurerm_policy_definition.Deny_unapproved_locations
@@ -71,7 +71,7 @@ data "azurerm_policy_definition" "Deny_unapproved_locations_resource_groups" {
 }
 
 module "Deny_unapproved_locations_resource_groups" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_subscription_assignment"
   assignment_display_name = "Deny_unapproved_locations_resource_groups"
   assignment_description  = "Deny unapproved locations resource groups"
   definition              = data.azurerm_policy_definition.Deny_unapproved_locations_resource_groups
@@ -91,7 +91,7 @@ module "deny_vpn_gateway_basic_sku" {
 }
 
 module "deny_vpn_gateway_basic_sku_assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "deny_vpn_gateway_basic_sku"
   assignment_description  = "deny_vpn_gateway_basic_sku"
   definition              = module.deny_vpn_gateway_basic_sku.definition
@@ -108,7 +108,7 @@ module "deny_sql_db_tde_disabled" {
 }
 
 module "deny_sql_db_tde_disabled_assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "deny_sql_db_tde_disabled"
   assignment_description  = "deny_sql_db_tde_disabled"
   definition              = module.deny_sql_db_tde_disabled.definition
@@ -124,7 +124,7 @@ module "deny_private_dns_zones" {
   # management_group_name = "Tenant Root Group"
 }
 module "deny_private_dns_zones_assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "deny_private_dns_zones"
   assignment_description  = "deny private dns zones in scope"
   definition              = module.deny_private_dns_zones.definition
@@ -137,7 +137,7 @@ data "azurerm_policy_definition" "deploy-azurebackup-on-vm" {
 }
 
 module "deploy-azurebackup-on-vm" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "deploy-azureBackup-on-vm"
   assignment_description  = "Azure Backup should be enabled for Virtual Machines"
   definition              = data.azurerm_policy_definition.deploy-azurebackup-on-vm
@@ -155,7 +155,7 @@ module "deny_public_appgw" {
 }
 
 module "deny_public_appgw_assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "deny_public_appgw"
   assignment_description  = "deny public IP application gateway"
   definition              = module.deny_public_appgw.definition
@@ -205,7 +205,7 @@ module "deny_network_interface_ip_forwarding" {
   # management_group_name = "Tenant Root Group"
 }
 module "deny_network_interface_ip_forwarding_assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "deny_network_interface_ip_forwarding"
   assignment_description  = "Deny network interface ip forwarding"
   definition              = module.deny_network_interface_ip_forwarding.definition
@@ -223,7 +223,7 @@ module "deny_subnet_without_nsg" {
 }
 
 module "deny_subnet_without_nsg_assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "deny_subnet_without_nsg"
   assignment_description  = "Subnets should be associated with a Network Security Group"
   definition              = module.deny_subnet_without_nsg.definition
@@ -243,7 +243,7 @@ module "audit-sql-db-auditing" {
   # management_group_name = "Tenant Root Group"
 }
 module "audit-sql-db-auditing-assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "audit-sql-db-auditing-assignment"
   assignment_description  = "Audit SQL DB server Auditing Settings"
   definition              = module.audit-sql-db-auditing.definition
@@ -259,7 +259,7 @@ data "azurerm_policy_definition" "audit_sql_vulnerabilityAssessments" {
   display_name = "Vulnerability assessment should be enabled on your SQL servers"
 }
 module "audit_sql_vulnerabilityAssessments_assign" {
-  source                  = "./modules/policy/def_assignment"
+  source                  = "./modules/policy/def_resource_group_assignment"
   assignment_display_name = "audit_sql_vulnerabilityAssessments"
   assignment_description  = "Audit Sql vulnerability Assessments"
   definition              = data.azurerm_policy_definition.audit_sql_vulnerabilityAssessments
